@@ -94,7 +94,7 @@ const Inicio = () => {
                             </button>
                         </div>
                     )}
-                    
+
                     {/* Paginador movido a la parte inferior */}
                     <div className="mt-5 d-flex justify-content-center">
                         <Paginador page={page} setPage={setPage} totalPages={totalPages} />

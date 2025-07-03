@@ -19,18 +19,18 @@ const Busquedas = () => {
         try {
             setLoading(true);
             const response = await fetch(API);
-            
+
             if (!response.ok) {
                 throw new Error(`Error ${response.status}: ${response.statusText}`);
             }
 
             const data = await response.json();
             // Filtrar solo películas/series con imagen
-            const filteredResults = data.results.filter(item => 
-                (item.media_type === 'movie' || item.media_type === 'tv') && 
+            const filteredResults = data.results.filter(item =>
+                (item.media_type === 'movie' || item.media_type === 'tv') &&
                 item.poster_path !== null
             );
-            
+
             setDatos(filteredResults);
             setTotalPages(data.total_pages > 500 ? 500 : data.total_pages);
             setLoading(false);

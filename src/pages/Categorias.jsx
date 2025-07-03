@@ -82,8 +82,8 @@ const Categorias = () => {
                 <div className="alert alert-danger">
                     <h4>Error al cargar los datos</h4>
                     <p>{error}</p>
-                    <button 
-                        onClick={() => window.location.reload()} 
+                    <button
+                        onClick={() => window.location.reload()}
                         className="btn btn-primary"
                     >
                         Intentar nuevamente
@@ -108,7 +108,7 @@ const Categorias = () => {
             <h3 className="text-center py-3">
                 {params.tipo === "cine" ? "Películas" : "Series de TV"} - Página {page}
             </h3>
-            
+
             <div className="row text-center py-3 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
                 {datos.map((item) => (
                     <div key={item.id} className="col">
@@ -116,7 +116,7 @@ const Categorias = () => {
                     </div>
                 ))}
             </div>
-            
+
             {totalPages > 1 && (
                 <div className="d-flex justify-content-center mt-4">
                     <Paginador page={page} setPage={handlePageChange} totalPages={totalPages} />

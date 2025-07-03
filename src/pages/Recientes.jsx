@@ -17,7 +17,7 @@ const Recientes = () => {
     try {
       setLoading(true);
       const response = await fetch(API_URL);
-      
+
       if (!response.ok) {
         throw new Error(`Error ${response.status}: ${response.statusText}`);
       }
@@ -64,25 +64,25 @@ const Recientes = () => {
     <section className="py-5 bg-dark text-white">
       <div className="container">
         <Paginador page={page} setPage={setPage} totalPages={totalPages} />
-          <div className="text-end">
-            <button 
+        <div className="text-end">
+          <button
             className="btn btn-outline-light"
             onClick={() => setShowAllMovies(!showAllMovies)}
           >
             {showAllMovies ? 'Mostrar menos' : 'Ver todas'}
           </button>
-          </div>
-          <h2 className="text-center py-5 mb-0">Películas Recientes</h2>
+        </div>
+        <h2 className="text-center py-5 mb-0">Películas Recientes</h2>
 
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
           {datos.slice(0, showAllMovies ? datos.length : 8).map((item) => (
-            <CardPeliculas key={item.id} item={item} tipo={'cine'}/>
+            <CardPeliculas key={item.id} item={item} tipo={'cine'} />
           ))}
         </div>
 
         {!showAllMovies && datos.length > 8 && (
           <div className="text-center mt-4">
-            <button 
+            <button
               className="btn btn-link text-primary"
               onClick={() => setShowAllMovies(true)}
             >

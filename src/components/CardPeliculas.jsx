@@ -23,8 +23,8 @@ const CardPeliculas = ({ item, tipo = "cine" }) => {
                         }}
                     />
                 ) : (
-                    <div 
-                        className="card-img-top rounded-3 shadow d-flex align-items-center justify-content-center bg-secondary" 
+                    <div
+                        className="card-img-top rounded-3 shadow d-flex align-items-center justify-content-center bg-secondary"
                         style={{ height: '450px' }}
                     >
                         <span className="text-white">Imagen no disponible</span>
@@ -65,25 +65,25 @@ const CardPeliculas = ({ item, tipo = "cine" }) => {
 
             {/* Modal de vista rápida */}
             {showModal && (
-                <div 
-                    className="modal fade show" 
+                <div
+                    className="modal fade show"
                     style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.8)' }}
                     onClick={() => setShowModal(false)}
                 >
-                    <div 
+                    <div
                         className="modal-dialog modal-lg modal-dialog-centered"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className="modal-content bg-dark text-white">
                             <div className="modal-header border-secondary">
                                 <h5 className="modal-title">{item.title}</h5>
-                                <button 
-                                    type="button" 
-                                    className="btn-close btn-close-white" 
+                                <button
+                                    type="button"
+                                    className="btn-close btn-close-white"
                                     onClick={() => setShowModal(false)}
                                 ></button>
                             </div>
-                            
+
                             <div className="modal-body">
                                 <div className="row">
                                     <div className="col-md-4">
@@ -103,7 +103,7 @@ const CardPeliculas = ({ item, tipo = "cine" }) => {
                                             </span>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="col-md-8">
                                         <h3 className="mb-3">{item.title}</h3>
                                         <div className="mb-4">
@@ -119,11 +119,11 @@ const CardPeliculas = ({ item, tipo = "cine" }) => {
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div className="modal-footer border-secondary">
-                                <button 
-                                    type="button" 
-                                    className="btn btn-secondary" 
+                                <button
+                                    type="button"
+                                    className="btn btn-secondary"
                                     onClick={() => setShowModal(false)}
                                 >
                                     Cerrar

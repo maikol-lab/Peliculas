@@ -58,12 +58,12 @@ const DetallesPeliculas = () => {
             const typeOrder = { 'Trailer': 1, 'Teaser': 2, 'Clip': 3 };
             if (typeOrder[a.type] < typeOrder[b.type]) return -1;
             if (typeOrder[a.type] > typeOrder[b.type]) return 1;
-            
+
             // Prioridad 2: Idioma (español latino > español de España > inglés)
             const langOrder = { 'mx': 1, 'es': 2, 'en': 3 };
             if (langOrder[a.iso_639_1] < langOrder[b.iso_639_1]) return -1;
             if (langOrder[a.iso_639_1] > langOrder[b.iso_639_1]) return 1;
-            
+
             // Prioridad 3: Tamaño (mayor primero)
             return (b.size || 0) - (a.size || 0);
           });
@@ -71,10 +71,10 @@ const DetallesPeliculas = () => {
         setFilteredTrailers(trailerList);
         if (trailerList.length > 0) {
           // Seleccionar el mejor tráiler por defecto
-          const defaultTrailer = trailerList.find(t => t.type === "Trailer" && t.iso_639_1 === "mx") || 
-                               trailerList.find(t => t.type === "Trailer" && t.iso_639_1 === "es") || 
-                               trailerList.find(t => t.type === "Trailer" && t.iso_639_1 === "en") || 
-                               trailerList[0];
+          const defaultTrailer = trailerList.find(t => t.type === "Trailer" && t.iso_639_1 === "mx") ||
+            trailerList.find(t => t.type === "Trailer" && t.iso_639_1 === "es") ||
+            trailerList.find(t => t.type === "Trailer" && t.iso_639_1 === "en") ||
+            trailerList[0];
           setSelectedTrailer(defaultTrailer);
         }
       }
@@ -216,7 +216,7 @@ const DetallesPeliculas = () => {
     // Si hay un estado 'from' definido, usarlo para navegar
     if (from) {
       navigate(from);
-    } 
+    }
     // Si no hay estado, verificar si viene de una búsqueda
     else if (location.state?.fromSearch) {
       navigate(-1);
@@ -285,7 +285,7 @@ const DetallesPeliculas = () => {
           <div className="row">
             <div className="col-12 d-flex justify-content-between align-items-center">
               <h1 className="text-white mb-0 display-4">{getTitle()}</h1>
-              <button 
+              <button
                 onClick={handleGoBack}
                 className="btn btn-outline-light btn-lg"
               >
@@ -386,7 +386,7 @@ const DetallesPeliculas = () => {
                 >
                   {filteredTrailers.length > 0 ? (
                     <>
-                      Ver tráiler{filteredTrailers.length > 1 ? 'es' : ''} 
+                      Ver tráiler{filteredTrailers.length > 1 ? 'es' : ''}
                       {filteredTrailers.length > 1 && (
                         <span className="ms-2 badge bg-light text-dark">
                           {filteredTrailers.length} opciones
@@ -451,7 +451,7 @@ const DetallesPeliculas = () => {
                       ))}
                     </div>
                   )}
-                  <button 
+                  <button
                     className="btn btn-danger ms-auto"
                     onClick={handleCloseTrailerModal}
                   >
@@ -509,25 +509,31 @@ const DetallesPeliculas = () => {
                       .slice(0, showFullCast ? reparto.length : 12)
                       .map((item) => (
                         <div className="col" key={item.id}>
-                          <div className="card h-100 border-0 bg-transparent">
-                            <img
-                              src={`${IMG_BASE_URL}w500${item.profile_path}`}
-                              className="card-img-top rounded-3 shadow"
-                              alt={item.name}
-                              loading="lazy"
-                            />
-                            <div className="card-body text-center px-0">
-                              <h5 className="card-title text-white">{item.name}</h5>
-                              <p className="card-text text-muted">
-                                {item.character || "Personaje no especificado"}
-                              </p>
-                              {item.popularity && (
-                                <small className="text-info">
-                                  Popularidad: {item.popularity.toFixed(1)}
-                                </small>
-                              )}
+                          <Link
+                            to={`/actor/${item.id}`}
+                            className="text-decoration-none"
+                            state={{ from: location.pathname }}
+                          >
+                            <div className="card h-100 border-0 bg-transparent">
+                              <img
+                                src={`${IMG_BASE_URL}w500${item.profile_path}`}
+                                className="card-img-top rounded-3 shadow"
+                                alt={item.name}
+                                loading="lazy"
+                              />
+                              <div className="card-body text-center px-0">
+                                <h5 className="card-title text-white">{item.name}</h5>
+                                <p className="card-text text-muted">
+                                  {item.character || "Personaje no especificado"}
+                                </p>
+                                {item.popularity && (
+                                  <small className="text-info">
+                                    Popularidad: {item.popularity.toFixed(1)}
+                                  </small>
+                                )}
+                              </div>
                             </div>
-                          </div>
+                          </Link>
                         </div>
                       ))}
                   </div>
