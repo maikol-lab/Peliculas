@@ -10,7 +10,6 @@ const Categorias = () => {
     const params = useParams();
     const location = useLocation();
     const [page, setPage] = useState(1);
-
     const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
@@ -87,7 +86,7 @@ const Categorias = () => {
                         onClick={() => window.location.reload()}
                         className="btn btn-primary"
                     >
-                        Intentar nuevamente  2
+                        Intentar nuevamente
                     </button>
                 </div>
             </div>
