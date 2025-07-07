@@ -8,9 +8,10 @@ import Tendencias from './pages/Tendencias'
 import Carrusel from './components/Carrusel'
 import Mejorvaloradascine from './pages/Mejorvaloradascine'
 import Recientes from './pages/Recientes'
-import Busquedas from './pages/Busquedas'
 import DetallesPeliculas from './pages/DetallesPeliculas'
-import PeliculasActor from './components/PeliculasActor'
+import Busquedas from './pages/Busquedas'
+import PeliculasActor from './pages/PeliculasActor'
+
 
 
 const App = () => {
