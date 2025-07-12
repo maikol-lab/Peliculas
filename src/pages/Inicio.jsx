@@ -3,6 +3,9 @@ import Carrusel from "../components/Carrusel";
 import CardPeliculas from "../components/CardPeliculas";
 import Paginador from "../components/Paginador";
 
+
+
+
 const Inicio = () => {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
