@@ -1,0 +1,71 @@
+/* --- Estilos MÍNIMOS OBLIGATORIOS para Embla Carousel v8+ --- */
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+/* --- Botones de navegación del carrusel --- */
+.embla__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.embla__button:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.embla__button--prev {
+  left: 20px;
+}
+
+.embla__button--next {
+  right: 20px;
+}
+
+.embla__button__svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: #333;
+}
+
+/* En móviles, ajustar posición si es necesario */
+@media (max-width: 991.98px) {
+  .embla__button--prev,
+  .embla__button--next {
+    width: 36px;
+    height: 36px;
+  }
+  .embla__button__svg {
+    width: 16px;
+    height: 16px;
+  }
+}

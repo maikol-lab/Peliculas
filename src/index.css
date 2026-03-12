@@ -1,0 +1,572 @@
+/* ========================================= */
+/* INICIO - TRANSICIONES Y ANIMACIONES       */
+/* ========================================= */
+
+/* Hover suave para imágenes y botones */
+.transition-hover {
+    transition: all 0.3s ease-in-out !important;
+}
+
+.transition-hover:hover {
+    transform: translateY(-3px) !important;
+}
+
+/* Animación de entrada con Animate.css (opcional) */
+.animate-hover {
+    animation-duration: 0.6s !important;
+    animation-fill-mode: both !important;
+}
+
+/* Delay dinámico para elementos en lista (grid de películas) */
+.animate-delay-1 { animation-delay: 0.05s !important; }
+.animate-delay-2 { animation-delay: 0.10s !important; }
+.animate-delay-3 { animation-delay: 0.15s !important; }
+.animate-delay-4 { animation-delay: 0.20s !important; }
+.animate-delay-5 { animation-delay: 0.25s !important; }
+
+/* Efecto hover específico para botones de acción */
+.btn-hover-effect {
+    transition: all 0.3s ease !important;
+}
+
+.btn-hover-effect:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4) !important;
+}
+
+/* Efecto hover para imágenes de tarjetas */
+.card-img-hover {
+    transition: transform 0.5s ease !important;
+}
+
+.card-img-hover:hover {
+    transform: scale(1.1) !important;
+}
+
+
+/* Estilos para las tarjetas de películas */
+.card-pelicula {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+}
+
+.card-pelicula:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-pelicula:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-img-top {
+    transition: transform 0.5s ease;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+}
+
+.badge-popularidad {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.badge-calificacion {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #ffc107, #ffca2c);
+    color: #000;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-detalle {
+    border-radius: 20px !important;
+    transition: all 0.2s ease !important;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.btn-detalle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(40, 167, 69, 0.3);
+}
+
+
+/* ModalPelicula.css */
+
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Contenedor del modal */
+.modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Botón cerrar */
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.modal-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Contenido del modal */
+.modal-content {
+    display: flex;
+    height: 100%;
+    min-height: 500px;
+}
+
+/* Sección de imagen */
+.modal-image-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+}
+
+.modal-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Badges sobre la imagen */
+.modal-badges {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.badge-popularidad {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.badge-calificacion {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.badge-popularidad svg,
+.badge-calificacion svg {
+    margin-right: 4px;
+}
+
+/* Sección de información */
+.modal-info-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    color: white;
+}
+
+/* Badge de tipo */
+.modal-type-badge {
+    margin-bottom: 15px;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.type-cine {
+    background-color: #667eea;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.type-tv {
+    background-color: #f093fb;
+    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+}
+
+/* Título */
+.modal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+/* Metadatos */
+.modal-metadata {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.metadata-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.metadata-item svg {
+    margin-right: 6px;
+}
+
+/* Barra de popularidad */
+.modal-popularity {
+    margin-bottom: 25px;
+}
+
+.popularity-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.popularity-value {
+    font-weight: 700;
+    color: #28a745;
+}
+
+.popularity-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.popularity-fill {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease;
+    background: linear-gradient(90deg, #28a745, #28a745);
+}
+
+.popularity-fill.high {
+    background: linear-gradient(90deg, #28a745, #ffc107);
+}
+
+/* Sinopsis */
+.modal-overview {
+    margin-bottom: 30px;
+    flex: 1;
+}
+
+.modal-overview h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #28a745;
+    letter-spacing: 1px;
+}
+
+.modal-overview p {
+    line-height: 1.6;
+    color: #b0b0b0;
+    font-size: 0.95rem;
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Botones */
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== ARREGLO COLOR TEXTO BUSCADOR ===== */
+
+input,
+input:focus,
+.form-control,
+.form-control:focus {
+    color: #000 !important;
+    caret-color: #000 !important;
+}
+
+input::placeholder,
+.form-control::placeholder {
+    color: #6c757d !important;
+    opacity: 1;
+}
+
+/* ========================================= */
+/* NUEVAS ANIMACIONES PARA NAVBAR            */
+/* ========================================= */
+
+.transition-hover {
+    transition: all 0.3s ease-in-out;
+}
+
+.transition-hover:hover {
+    transform: translateY(-2px);
+    color: #dc3545 !important;
+}
+
+/* ========================================= */
+/* CORRECCIÓN Z-INDEX PARA DROPDOWNS         */
+/* ========================================= */
+
+/* Dropdowns con z-index muy alto para que siempre estén encima */
+.dropdown-menu {
+    z-index: 10000 !important;
+    position: absolute !important;
+    overflow: visible !important;
+}
+
+/* Navbar y Topbar con z-index alto */
+.nav-bar,
+.topbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    overflow: visible !important;
+}
+
+/* Contenedores de dropdown específicos */
+.nav-item.dropdown .dropdown-menu,
+.dropdown .dropdown-menu {
+    z-index: 10001 !important;
+}
+
+/* Contenedores padres de dropdowns sin overflow hidden */
+.navbar-collapse,
+.d-inline-flex,
+.container-fluid {
+    overflow: visible !important;
+}
+
+/* Asegurar que el contenido de la página no se superponga */
+body {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fix para Bootstrap dropdowns */
+[data-bs-toggle="dropdown"] {
+    position: relative;
+    z-index: 9998;
+}
+
+/* Dropdowns del Topbar específicamente */
+.topbar .dropdown-menu {
+    z-index: 10002 !important;
+}
+
+/* Dropdowns del Navbar específicamente */
+.nav-bar .dropdown-menu {
+    z-index: 10002 !important;
+}
+
+/* Evitar que row corte los dropdowns */
+.row {
+    overflow: visible !important;
+}
+
+/* Asegurar que los contenedores de dropdown no tengan overflow */
+.col-lg-4,
+.col-12,
+.col-lg-3,
+.col-lg-9 {
+    overflow: visible !important;
+}
+
+
+
+/* ========================================= */
+/* TOPBAR2 - ESTILOS ESPECÍFICOS             */
+/* ========================================= */
+
+.topbar2-container {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9998 !important;
+    overflow: visible !important;
+}
+
+.topbar2-container .dropdown-menu,
+.topbar2-container .form-select {
+    z-index: 10003 !important;
+    overflow: visible !important;
+}
+
+/* Input y select del buscador con prioridad */
+.topbar2-container input:focus,
+.topbar2-container select:focus {
+    z-index: 10004 !important;
+    position: relative;
+}
+
+/* Botones e iconos con transición */
+.topbar2-container .btn-md-square {
+    transition: all 0.3s ease-in-out;
+}
+
+.topbar2-container .btn-md-square:hover {
+    transform: scale(1.1);
+    border-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Asegurar que el formulario no corte elementos */
+.topbar2-container form {
+    overflow: visible !important;
+    position: relative;
+    z-index: 9997;
+}
+
+/* Contenedores de columnas */
+.topbar2-container .col-md-4,
+.topbar2-container .col-lg-3,
+.topbar2-container .col-lg-6 {
+    overflow: visible !important;
+}
+
+/* Row del topbar2 */
+.topbar2-container .row {
+    overflow: visible !important;
+}
+
+/* ========================================= */
+/* ICONOS SOCIALES - COLORES OFICIALES       */
+/* ========================================= */
+
+/* Quitar bordes rojos y aplicar hover suave */
+.social-icon {
+    border: none !important;
+    transition: all 0.25s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Caja del icono sin borde rojo */
+.social-icon-box {
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background-color: transparent !important;
+    transition: all 0.25s ease-in-out;
+}
+
+.social-icon:hover .social-icon-box {
+    border-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+/* SVGs sin heredar color del padre */
+.social-icon svg {
+    display: block;
+}
+
+/* Asegurar que los fill de los SVG se respeten */
+.social-icon path,
+.social-icon svg [fill] {
+    transition: none;
+}
