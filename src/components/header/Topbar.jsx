@@ -54,11 +54,11 @@ const Topbar = () => {
 
                             <div className="dropdown-menu dropdown-menu-dark rounded shadow">
 
-                                <a href="#" className="dropdown-item text-dark">
+                                <a href="#" className="dropdown-item text-white">
                                     💶 Euro
                                 </a>
 
-                                <a href="#" className="dropdown-item text-dark">
+                                <a href="#" className="dropdown-item text-white">
                                     💵 Dólar
                                 </a>
 
