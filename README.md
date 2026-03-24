@@ -11,7 +11,10 @@ API REST para la gestión de películas, desarrollada con Node.js.
 - [Uso](#uso)
 - [Endpoints de la API](#endpoints-de-la-api)
 - [Estructura del Proyecto](#estructura-del-proyecto)
-- [Troubleshooting](#troubleshooting)
+- [Troubleshooting](./docs/TROUBLESHOOTING.md)
+- [API Reference](./docs/API_REFERENCE.md)
+- [Arquitectura](./docs/ARCHITECTURE.md)
+- [Características del Proyecto](./docs/FEATURES.md)
 - [Contribución](#contribución)
 - [Autor](#autor)
 
@@ -39,6 +42,7 @@ API REST para la gestión de películas, desarrollada con Node.js.
 ## 🚀 Instalación
 
 ### Prerrequisitos
+
 - **Node.js** v20 o superior
 - **npm** v8 o superior
 - **Git** v2.30 o superior
@@ -111,9 +115,14 @@ Para más detalles ver [API Reference](./docs/API_REFERENCE.md)
     ├── .gitignore
     └── README.md
 
-## 🐛 Troubleshooting
+## 📚 Documentación
 
-Ver [TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md)
+| Documento | Descripción |
+|-----------|-------------|
+| [🐛 Troubleshooting](./docs/TROUBLESHOOTING.md) | Guía de solución de problemas |
+| [📡 API Reference](./docs/API_REFERENCE.md) | Documentación de endpoints |
+| [🏗️ Arquitectura](./docs/ARCHITECTURE.md) | Arquitectura del proyecto |
+| [✨ Características](./docs/FEATURES.md) | Features y roadmap |
 
 ## 🤝 Contribución
 

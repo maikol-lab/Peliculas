@@ -1,8 +1,3 @@
----
-
-## 📄 Archivo 5: FEATURES.md
-
-```markdown
 # ✨ Características del Proyecto - Peliculas API
 
 ## 🎯 Características Principales
@@ -64,15 +59,15 @@
 
 ## 📊 Estado Actual del Proyecto
 
-Progreso General: ████████░░░░░░░░ 40%
+    Progreso General: ████████░░░░░░░░ 40%
 
-[✅] Inicialización del proyecto
-[✅] Estructura de carpetas
-[✅] Instalación de dependencias
-[✅] Repositorio Git configurado
-[⏳] Implementación completa de endpoints
-[⏳] Conexión a base de datos
-[⏳] Validaciones
-[⏳] Testing
-[⏳] Documentación con Swagger
-[⏳] Despliegue
+    [✅] Inicialización del proyecto
+    [✅] Estructura de carpetas
+    [✅] Instalación de dependencias
+    [✅] Repositorio Git configurado
+    [⏳] Implementación completa de endpoints
+    [⏳] Conexión a base de datos
+    [⏳] Validaciones
+    [⏳] Testing
+    [⏳] Documentación con Swagger
+    [⏳] Despliegue
