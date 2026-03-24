@@ -1,16 +1,68 @@
-# React + Vite
+# 🎬 Peliculas - API REST
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+API REST para la gestión de películas, desarrollada con Node.js.
 
-Currently, two official plugins are available:
+## 📋 Tabla de Contenidos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Descripción](#descripción)
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Endpoints de la API](#endpoints-de-la-api)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Troubleshooting](#troubleshooting)
+- [Contribución](#contribución)
+- [Autor](#autor)
 
-## React Compiler
+## 📖 Descripción
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+**Peliculas** es una aplicación backend que permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre un catálogo de películas. Diseñada como una API RESTful siguiendo buenas prácticas de desarrollo.
 
-## Expanding the ESLint configuration
+## ✨ Características
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ CRUD completo de películas
+- ✅ API RESTful con endpoints bien definidos
+- ✅ Manejo de errores centralizado
+- ✅ Estructura de proyecto escalable
+- ✅ Gestión de dependencias con npm
+
+## 🛠️ Tecnologías
+
+| Tecnología | Uso |
+|------------|-----|
+| Node.js | Runtime del servidor |
+| npm | Gestor de paquetes |
+| Git | Control de versiones |
+| GitHub | Repositorio remoto |
+
+## 🚀 Instalación
+
+### Prerrequisitos
+
+- **Node.js** v16 o superior
+- **npm** v8 o superior
+- **Git** v2.30 o superior
+
+### Pasos
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/tu-usuario/peliculas.git
+
+# 2. Navegar al directorio del proyecto
+cd peliculas
+
+# 3. Instalar dependencias
+npm install
+
+# 4. Configurar variables de entorno (si aplica)
+cp .env.example .env
+
+# 5. Iniciar el servidor
+npm start
+
+#📡 Uso
+#Iniciar en modo desarrollo
+
+npm run dev
