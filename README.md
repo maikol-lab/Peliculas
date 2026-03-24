@@ -39,30 +39,96 @@ API REST para la gestión de películas, desarrollada con Node.js.
 ## 🚀 Instalación
 
 ### Prerrequisitos
-
-- **Node.js** v16 o superior
+- **Node.js** v20 o superior
 - **npm** v8 o superior
 - **Git** v2.30 o superior
 
 ### Pasos
 
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/tu-usuario/peliculas.git
+**1. Clonar el repositorio**
 
-# 2. Navegar al directorio del proyecto
-cd peliculas
+    git clone https://github.com/tu-usuario/peliculas.git
 
-# 3. Instalar dependencias
-npm install
+**2. Navegar al directorio del proyecto**
 
-# 4. Configurar variables de entorno (si aplica)
-cp .env.example .env
+    cd peliculas
 
-# 5. Iniciar el servidor
-npm start
+**3. Instalar dependencias**
 
-#📡 Uso
-#Iniciar en modo desarrollo
+    npm install
 
-npm run dev
+**4. Configurar variables de entorno (si aplica)**
+
+    cp .env.example .env
+
+**5. Iniciar el servidor**
+
+    npm start
+
+## 📡 Uso
+
+**Iniciar en modo desarrollo**
+
+    npm run dev
+
+**Iniciar en modo producción**
+
+    npm start
+
+**Ejecutar tests**
+
+    npm test
+
+## 🔗 Endpoints de la API
+
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | /api/peliculas | Obtener todas las películas |
+| GET | /api/peliculas/:id | Obtener película por ID |
+| POST | /api/peliculas | Crear nueva película |
+| PUT | /api/peliculas/:id | Actualizar película |
+| DELETE | /api/peliculas/:id | Eliminar película |
+
+Para más detalles ver [API Reference](./docs/API_REFERENCE.md)
+
+## 📁 Estructura del Proyecto
+
+    peliculas/
+    ├── docs/
+    │   ├── ARCHITECTURE.md
+    │   ├── API_REFERENCE.md
+    │   ├── TROUBLESHOOTING.md
+    │   └── FEATURES.md
+    ├── node_modules/
+    ├── src/
+    │   ├── controllers/
+    │   ├── models/
+    │   ├── routes/
+    │   ├── middlewares/
+    │   └── index.js
+    ├── package.json
+    ├── package-lock.json
+    ├── .gitignore
+    └── README.md
+
+## 🐛 Troubleshooting
+
+Ver [TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md)
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea tu rama de feature: `git checkout -b feature/nueva-funcionalidad`
+3. Commit tus cambios: `git commit -m 'feat: agregar nueva funcionalidad'`
+4. Push a la rama: `git push origin feature/nueva-funcionalidad`
+5. Abre un Pull Request
+
+## ✍️ Autor
+
+**Maykool**
+- Email: Maykolrodriguez2020.2016@gmail.com
+- GitHub: [@Maykool](https://github.com/Maykool)
+
+## 📝 Licencia
+
+Este proyecto está bajo la Licencia MIT.
