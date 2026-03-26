@@ -1,51 +1,44 @@
 # 🏗️ Documentación de Arquitectura - Peliculas API
 
+> Para convertir los diagramas a PNG, usa: https://mermaid.live oVS Code con extensión "Markdown Preview Mermaid"
+
 ## 1. Visión General
 
 La aplicación sigue una **arquitectura en capas (Layered Architecture)** que separa responsabilidades para facilitar el mantenimiento y la escalabilidad.
 
-## 2. Diagrama de Arquitectura
+---
 
-    ┌─────────────────────────────────────────────────┐
-    │                    CLIENTE                       │
-    │           (Postman / Frontend / cURL)            │
-    └─────────────────────┬───────────────────────────┘
-                          │ HTTP Request
-                          ▼
-    ┌─────────────────────────────────────────────────┐
-    │               CAPA DE ENTRADA                    │
-    │                 (Routes)                         │
-    │  Define los endpoints y métodos HTTP permitidos  │
-    └─────────────────────┬───────────────────────────┘
-                          │
-                          ▼
-    ┌─────────────────────────────────────────────────┐
-    │              CAPA DE MIDDLEWARE                   │
-    │             (Middlewares)                         │
-    │  Validación, autenticación, manejo de errores    │
-    └─────────────────────┬───────────────────────────┘
-                          │
-                          ▼
-    ┌─────────────────────────────────────────────────┐
-    │           CAPA DE LÓGICA DE NEGOCIO              │
-    │              (Controllers)                       │
-    │  Procesa la lógica y orquesta las operaciones    │
-    └─────────────────────┬───────────────────────────┘
-                          │
-                          ▼
-    ┌─────────────────────────────────────────────────┐
-    │             CAPA DE DATOS                        │
-    │               (Models)                           │
-    │  Define esquemas y accede a la base de datos     │
-    └─────────────────────┬───────────────────────────┘
-                          │
-                          ▼
-    ┌─────────────────────────────────────────────────┐
-    │            BASE DE DATOS                         │
-    │       (MongoDB / MySQL / JSON File)              │
-    └─────────────────────────────────────────────────┘
+## 2. Diagrama de Arquitectura (Flow)
 
-## 3. Componentes Principales
+![Diagrama de Arquitectura](../public/asset/Diagrama%20de%20Arquitectura.png)
+
+---
+
+## 3. Diagrama de Componentes
+
+![Diagrama de Componentes](../public/asset/Diagrama%20de%20Componentes.png)
+
+---
+
+## 4. Diagrama de Secuencia (Crear Película)
+
+![Diagrama de Secuencia](../public/asset/Diagrama%20de%20Secuencia.png)
+
+---
+
+## 5. Estructura del Proyecto
+
+![Estructura del Proyecto](../public/asset/Estructura%20del%20Proyecto.png)
+
+---
+
+## 6. Flujo de Petición API
+
+![Flujo de Petición API](../public/asset/Flujo%20de%20Petición%20API.png)
+
+---
+
+## 7. Componentes Principales
 
 ### 3.1 Routes - /src/routes/
 - **Responsabilidad**: Definir los endpoints de la API
@@ -66,17 +59,7 @@ La aplicación sigue una **arquitectura en capas (Layered Architecture)** que se
 - **Responsabilidad**: Funciones intermedias de procesamiento
 - **Funciones**: Validación, logging, manejo de errores, CORS
 
-## 4. Flujo de una Petición
-
-    1. Cliente envía: GET /api/peliculas/1
-    2. Router identifica la ruta → peliculasRouter
-    3. Middleware valida la petición
-    4. Controller ejecuta la lógica → getPeliculaById(1)
-    5. Model consulta la base de datos
-    6. Controller formatea la respuesta
-    7. Se envía HTTP 200 con los datos al cliente
-
-## 5. Principios de Diseño
+## 8. Principios de Diseño
 
 | Principio | Aplicación |
 |-----------|------------|
@@ -85,7 +68,7 @@ La aplicación sigue una **arquitectura en capas (Layered Architecture)** que se
 | **DRY** | Reutilización de middlewares y utilidades |
 | **RESTful** | Endpoints siguen convenciones REST |
 
-## 6. Decisiones Técnicas
+## 9. Decisiones Técnicas
 
 | Decisión | Justificación |
 |----------|---------------|
